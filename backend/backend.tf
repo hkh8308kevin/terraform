@@ -5,7 +5,12 @@ terraform {
    region = "ap-northeast-2"
 
    dynamodb_table = "terraform-up-and-running-locks"
-   encrypt        = "true"
-   }
+   billing_mode   = "PAY_PER_REQUEST" 
+   hash_ key      = "LockID" 
+   attribute { 
+    name = "LockID" 
+    type = "s" 
+   } 
+ }
 }
 
